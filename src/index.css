@@ -1,13 +1,28 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   background: #05030a;
+  color: #f8fafc;
 }
 
 #root {
   min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-display);
 }
 
 .ambient-grid {
@@ -31,12 +46,33 @@ body {
     radial-gradient(circle at 50% 75%, rgba(220, 38, 38, 0.12), transparent 40%);
 }
 
+.hero-beam {
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  width: 60vw;
+  height: 50vh;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(34, 211, 238, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .glass-panel {
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: linear-gradient(140deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
   border-radius: 1rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 0 32px rgba(45, 87, 255, 0.15);
+}
+
+.glow-border {
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.glow-border:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
 }
 
 .neon-button {
@@ -47,6 +83,8 @@ body {
   color: #dffbff;
   cursor: pointer;
   transition: 220ms;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .neon-button:hover {
@@ -62,6 +100,8 @@ body {
   color: #f8fafc;
   cursor: pointer;
   transition: 220ms;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .ghost-button:hover {
@@ -69,6 +109,7 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: clamp(1.45rem, 2.6vw, 2.15rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -76,7 +117,25 @@ body {
 }
 
 .hero-title {
-  text-shadow: 0 0 30px rgba(49, 182, 255, 0.35);
+  text-shadow: 0 0 40px rgba(49, 182, 255, 0.35);
+}
+
+.live-pulse {
+  animation: pulse-live 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
 }
 
 .auth-input {
@@ -86,6 +145,7 @@ body {
   background: rgba(255, 255, 255, 0.04);
   padding: 0.7rem 0.8rem;
   color: #fff;
+  font-family: inherit;
 }
 
 .auth-input:focus {
@@ -100,4 +160,9 @@ body {
   background: rgba(255, 255, 255, 0.06);
   color: white;
   padding: 0.55rem;
+  cursor: pointer;
+}
+
+.sponsor-track {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
