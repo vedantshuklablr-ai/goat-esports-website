@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background: #05030a;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.ambient-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(116, 143, 252, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(116, 143, 252, 0.3) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.ambient-gradient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(56, 189, 248, 0.2), transparent 38%),
+    radial-gradient(circle at 88% 14%, rgba(168, 85, 247, 0.25), transparent 42%),
+    radial-gradient(circle at 50% 75%, rgba(220, 38, 38, 0.12), transparent 40%);
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 32px rgba(45, 87, 255, 0.15);
+}
+
+.neon-button {
+  border: 1px solid rgba(34, 211, 238, 0.7);
+  border-radius: 0.8rem;
+  padding: 0.65rem 1.1rem;
+  background: linear-gradient(120deg, rgba(6, 182, 212, 0.28), rgba(79, 70, 229, 0.3));
+  color: #dffbff;
+  cursor: pointer;
+  transition: 220ms;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.42);
+  transform: translateY(-1px);
+}
+
+.ghost-button {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 0.8rem;
+  padding: 0.65rem 1.1rem;
+  background: rgba(0, 0, 0, 0.25);
+  color: #f8fafc;
+  cursor: pointer;
+  transition: 220ms;
+}
+
+.ghost-button:hover {
+  border-color: rgba(34, 211, 238, 0.6);
+}
+
+.section-title {
+  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero-title {
+  text-shadow: 0 0 30px rgba(49, 182, 255, 0.35);
+}
+
+.auth-input {
+  width: 100%;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.7rem 0.8rem;
+  color: #fff;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.16);
+}
+
+.social-btn {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  padding: 0.55rem;
+}
