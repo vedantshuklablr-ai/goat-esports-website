@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found</title>
+    <script>
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const segments = path.split('/').filter(Boolean);
+      const base = segments.length > 0 ? '/' + segments[0] : '';
+      const route = '/' + segments.slice(1).join('/');
+      const hashRoute = route === '/' ? '/' : route;
+      const target = `${base}/#${hashRoute}${search}`;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the app...</p>
+  </body>
+</html>

@@ -1,7 +1,14 @@
 {
-  "name": "esports-website",
+  "name": "goat-esports-website",
+  "description": "Premium esports organization website built with React, Vite, Tailwind CSS, and Framer Motion",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Vedant Shukla",
+  "license": "MIT",
+  "packageManager": "npm@10.5.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
